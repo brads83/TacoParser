@@ -63,7 +63,7 @@ namespace LoggingKata
                 }
             }
 
-            logger.LogInfo($"The two locations furthest away from each other are: {tacobell1.Name} and {tacobell2.Name} at {distance} meters.");
+            logger.LogInfo($"The two locations furthest away from each other are: {tacobell1.Name} and {tacobell2.Name} at {TacoParser.ConvertMetersToMiles(distance)} miles.");
 
             // Now, compare the two using `.GetDistanceTo()`, which returns a double
             // If the distance is greater than the currently saved distance, update the distance and the two `ITrackable` variables you set above

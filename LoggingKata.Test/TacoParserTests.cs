@@ -49,5 +49,18 @@ namespace LoggingKata.Test
 
             Assert.Equal(expected, actual.Location.Latitude); //Assert
         }
+
+        [Theory]
+        [InlineData(500, 0.31)]
+
+        public void ShouldConvertMetersToMiles(double meters, double expected)
+        {
+            
+            var tacoParser = new TacoParser();  //Arrange
+
+            var actual = TacoParser.ConvertMetersToMiles(meters);  //Act
+
+            Assert.Equal(expected, actual);  //Assert
+        }
     }
 }
