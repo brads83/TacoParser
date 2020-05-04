@@ -54,22 +54,21 @@ namespace LoggingKata
                     corB.Latitude = locations[j].Location.Latitude;
                     corB.Longitude = locations[j].Location.Longitude;
 
-                    if(corA.GetDistanceTo(corB) > distance)
+                    if(corA.GetDistanceTo(corB) > distance) // Now, compare the two using `.GetDistanceTo()`, which returns a double
                     {
-                        distance = corA.GetDistanceTo(corB);
-                        tacobell1 = locations[i];
-                        tacobell2 = locations[j];
+                        distance = corA.GetDistanceTo(corB);  
+                        tacobell1 = locations[i];  // If the distance is greater than the currently saved distance, 
+                        tacobell2 = locations[j]; //update the distance and the two `ITrackable` variables you set above
                     }
                 }
             }
 
+            // Once you've looped through everything, you've found the two Taco Bells farthest away from each other.
             logger.LogInfo($"The two locations furthest away from each other are: {tacobell1.Name} and {tacobell2.Name} at {TacoParser.ConvertMetersToMiles(distance)} miles.");
 
-            // Now, compare the two using `.GetDistanceTo()`, which returns a double
-            // If the distance is greater than the currently saved distance, update the distance and the two `ITrackable` variables you set above
+           
 
-            // Once you've looped through everything, you've found the two Taco Bells farthest away from each other.
-
+            
 
 
         }
